@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360">
+  <rect width="720" height="360" fill="#f4f1ea" stroke="#222"/>
+  <circle cx="376" cy="84" r="4" fill="oklch(0.6182 0.1291 229.51)" stroke="#222" stroke-width="0.5"/>
+  <text x="384" y="88" font-family="sans-serif" font-size="11">Baden-Baden</text>
+  <circle cx="382" cy="60" r="4" fill="oklch(0.7574 0.0924 208.51)" stroke="#222" stroke-width="0.5"/>
+  <text x="390" y="64" font-family="sans-serif" font-size="11">Oslo</text>
+  <circle cx="192" cy="160" r="4" fill="oklch(0.3500 0.2000 270.00)" stroke="#222" stroke-width="0.5"/>
+  <text x="200" y="164" font-family="sans-serif" font-size="11">San Jose</text>
+  <circle cx="382" cy="92" r="4" fill="oklch(0.7742 0.0879 205.97)" stroke="#222" stroke-width="0.5"/>
+  <text x="390" y="96" font-family="sans-serif" font-size="11">Florenz</text>
+  <circle cx="396.00000000000006" cy="248" r="4" fill="oklch(0.8800 0.0600 190.00)" stroke="#222" stroke-width="0.5"/>
+  <text x="404.00000000000006" y="252" font-family="sans-serif" font-size="11">Kapstadt</text>
+  <circle cx="360" cy="76" r="4" fill="oklch(0.8363 0.0716 196.60)" stroke="#222" stroke-width="0.5"/>
+  <text x="368" y="80" font-family="sans-serif" font-size="11">London</text>
+  <circle cx="662" cy="248" r="4" fill="oklch(0.6444 0.1222 225.56)" stroke="#222" stroke-width="0.5"/>
+  <text x="670" y="252" font-family="sans-serif" font-size="11">Sydney</text>
+  <circle cx="640" cy="108" r="4" fill="oklch(0.4838 0.1647 249.81)" stroke="#222" stroke-width="0.5"/>
+  <text x="648" y="112" font-family="sans-serif" font-size="11">Tokyo</text>
+  <circle cx="114" cy="82" r="4" fill="oklch(0.6555 0.1193 223.88)" stroke="#222" stroke-width="0.5"/>
+  <text x="122" y="86" font-family="sans-serif" font-size="11">Vancouver</text>
+  <circle cx="410" cy="178" r="4" fill="oklch(0.4759 0.1668 251.00)" stroke="#222" stroke-width="0.5"/>
+  <text x="418" y="182" font-family="sans-serif" font-size="11">Kisangani</text>
+  <defs>
+    <linearGradient id="niederschlagsSkala" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.0%" stop-color="oklch(0.8800 0.0600 190.00)"/>
+      <stop offset="10.0%" stop-color="oklch(0.8270 0.0740 198.00)"/>
+      <stop offset="20.0%" stop-color="oklch(0.7740 0.0880 206.00)"/>
+      <stop offset="30.0%" stop-color="oklch(0.7210 0.1020 214.00)"/>
+      <stop offset="40.0%" stop-color="oklch(0.6680 0.1160 222.00)"/>
+      <stop offset="50.0%" stop-color="oklch(0.6150 0.1300 230.00)"/>
+      <stop offset="60.0%" stop-color="oklch(0.5620 0.1440 238.00)"/>
+      <stop offset="70.0%" stop-color="oklch(0.5090 0.1580 246.00)"/>
+      <stop offset="80.0%" stop-color="oklch(0.4560 0.1720 254.00)"/>
+      <stop offset="90.0%" stop-color="oklch(0.4030 0.1860 262.00)"/>
+      <stop offset="100.0%" stop-color="oklch(0.3500 0.2000 270.00)"/>
+    </linearGradient>
+  </defs>
+  <text x="15" y="319" font-family="sans-serif" font-size="11" font-weight="bold">Niederschlag (l/m² pro Jahr)</text>
+  <rect x="15" y="325" width="160" height="12" fill="url(#niederschlagsSkala)" stroke="#222" stroke-width="0.5"/>
+  <line x1="15" y1="337" x2="15" y2="341" stroke="#222" stroke-width="0.5"/>
+  <text x="15" y="352" font-family="sans-serif" font-size="10" text-anchor="start">493</text>
+  <line x1="95" y1="337" x2="95" y2="341" stroke="#222" stroke-width="0.5"/>
+  <text x="95" y="352" font-family="sans-serif" font-size="10" text-anchor="middle">1232</text>
+  <line x1="175" y1="337" x2="175" y2="341" stroke="#222" stroke-width="0.5"/>
+  <text x="175" y="352" font-family="sans-serif" font-size="10" text-anchor="end">1971</text>
+</svg>

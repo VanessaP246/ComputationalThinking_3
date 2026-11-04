@@ -1,0 +1,3 @@
+<!--orte.json, karte.svg & projektion.js beigefügt  -->
+
+Die Punkte an Stelle der Koordinaten zeigen anhand ihrer Farbe den Durchschnittsniederschlag in der entsprechenden Stadt. Die Farbspannweite dieser Punkte soll größer sein, damit man die Unterschiede besser erkennt. Es soll also nicht nur die Helligkeit, sondern auch Sättigung & Farbton innerhalb des LCH-Farbraums etwas variieren. Ergänze außerdem eine Skala unten links im SVG, an der man erkennt, welche Farbe welchem Niederschlags-Wert entspricht. Gebe die angepasste JavaScript-Datei aus.
