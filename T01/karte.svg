@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360">
+  <rect width="720" height="360" fill="#f4f1ea" stroke="#222"/>
+  <circle cx="360" cy="180" r="4" fill="#c0392b"/>
+  <text x="368" y="184" font-family="sans-serif" font-size="11">Nullinsel</text>
+  <circle cx="380" cy="180" r="4" fill="#c0392b"/>
+  <text x="388" y="184" font-family="sans-serif" font-size="11">Prüfpunkt Ost</text>
+  <circle cx="379.58" cy="82.4" r="4" fill="#c0392b"/>
+  <text x="387.58" y="86.4" font-family="sans-serif" font-size="11">Schwäbisch Gmünd</text>
+  <circle cx="378.36580000000004" cy="82.4484" r="4" fill="#c0392b"/>
+  <text x="386.36580000000004" y="86.4484" font-family="sans-serif" font-size="11">Stuttgart</text>
+  <circle cx="396.84000000000003" cy="247.83999999999997" r="4" fill="#c0392b"/>
+  <text x="404.84000000000003" y="251.83999999999997" font-family="sans-serif" font-size="11">Kapstadt</text>
+  <circle cx="391.26" cy="23.56" r="4" fill="#c0392b"/>
+  <text x="399.26" y="27.56" font-family="sans-serif" font-size="11">Spitzbergen</text>
+  <circle cx="411.26" cy="23.56" r="4" fill="#c0392b"/>
+  <text x="419.26" y="27.56" font-family="sans-serif" font-size="11">Prüfpunkt Nord</text>
+  <circle cx="211.71138159999998" cy="98.61999999999999" r="4" fill="#c0392b"/>
+  <text x="219.71138159999998" y="102.61999999999999" font-family="sans-serif" font-size="11">NYC</text>
+</svg>
