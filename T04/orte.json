@@ -1,0 +1,12 @@
+[
+  { "name": "Baden-Baden", "lat": "48", "lon": "8", "niederschlagLProQm": "1223" },
+  { "name": "Oslo", "lat": "60", "lon": "11", "niederschlagLProQm": "835" },
+  { "name": "San Jose", "lat": "10", "lon": "-84", "niederschlagLProQm": "1971" },
+  { "name": "Florenz", "lat": "44", "lon": "11", "niederschlagLProQm": "788" },
+  { "name": "Kapstadt", "lat": "-34", "lon": "18", "niederschlagLProQm": "493" },
+  { "name": "London", "lat": "52", "lon": "0", "niederschlagLProQm": "615" },
+  { "name": "Sydney", "lat": "-34", "lon": "151", "niederschlagLProQm": "1150" },
+  { "name": "Tokyo", "lat": "36", "lon": "140", "niederschlagLProQm": "1598" },
+  { "name": "Vancouver", "lat": "49", "lon": "-123", "niederschlagLProQm": "1119" },
+  { "name": "Kisangani", "lat": "1", "lon": "25", "niederschlagLProQm": "1620" }
+]
