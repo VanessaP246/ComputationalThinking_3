@@ -8,5 +8,6 @@
   { "name": "Sydney", "lat": "-34", "lon": "151", "niederschlagLProQm": "1150" },
   { "name": "Tokyo", "lat": "36", "lon": "140", "niederschlagLProQm": "1598" },
   { "name": "Vancouver", "lat": "49", "lon": "-123", "niederschlagLProQm": "1119" },
-  { "name": "Kisangani", "lat": "1", "lon": "25", "niederschlagLProQm": "1620" }
+  { "name": "Kisangani", "lat": "1", "lon": "25", "niederschlagLProQm": "1620" },
+  { "name": "Schwäbisch Gmünd", "lat": "48.8", "lon": "9.8", "niederschlagLProQm": "900" }
 ]

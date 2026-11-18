@@ -1,10 +1,15 @@
+// ---- Karten-Ausschnitt und Zoom ----
+const AUSSCHNITT = { west: 5.8, ost: 15.1, nord: 55.1, sued: 47.2 }; // Deutschland (Basisansicht = Zoom 1)
+const ZOOMPUNKT = { lat: 48.80, lon: 9.80 };                        // Schwäbisch Gmünd
+const SLIDER_BASIS = 720; // Slider-Wert, bei dem Zoom = 1 ist (= value im HTML)
+
+// SVG-Rahmen: bleibt fix
 const BREITE_SVG = 720;
 const HOEHE_SVG = 360;
 
 const sliderBreite = document.querySelector("#breite");
 // console.log(sliderBreite);
 
-const AUSSCHNITT = { west: 5.8, ost: 15.1, nord: 55.1, sued: 47.2 }; // Beispiel: Deutschland
 
 function lonZuX(lon, breite, ausschnitt) {
   return ((lon - ausschnitt.west) / (ausschnitt.ost - ausschnitt.west)) * breite;
@@ -15,15 +20,24 @@ function latZuY(lat, hoehe, ausschnitt) {
 }
 
 
-// const orte = JSON.parse(    //JSON.parse wandelt Text in ein JavaScript-Objekt um
-//   fs.readFileSync(require("path").join(__dirname, "orte.json"), "utf8")   //require erzeugt den absoluten Pfad zur Datei, Rest liest die Datei synchron ein und gibt den Inhalt als String zurück
-// ).map((ort) => ({   //für jeden Ort wird ein neues Objekt erstellt
-//   ...ort,   //kopiert alle bisherigen Eigenschaften
-//   lat: Number(ort.lat),   // durch number werden Werte durch echte Zahlen überschrieben, damit später die Rechnung für lonZuX und latZuY funktioniert
-//   lon: Number(ort.lon),
-//   niederschlagLProQm: Number(ort.niederschlagLProQm),
-// }));
+function zoomAusschnitt(basis, punkt, faktor) {
+  // relative Lage des Zoompunkts im Basis-Ausschnitt (0..1)
+  const fx = (punkt.lon - basis.west) / (basis.ost - basis.west);
+  const fy = (basis.nord - punkt.lat) / (basis.nord - basis.sued);
 
+  // neue Ausdehnung in Grad: Zoom > 1 → kleinerer Ausschnitt
+  const breiteGrad = (basis.ost - basis.west) / faktor;
+  const hoeheGrad = (basis.nord - basis.sued) / faktor;
+
+  // Ausschnitt so legen, dass der Zoompunkt weiterhin bei fx / fy liegt
+  const west = punkt.lon - fx * breiteGrad;
+  const nord = punkt.lat + fy * hoeheGrad;
+
+  return { west, ost: west + breiteGrad, nord, sued: nord - hoeheGrad };
+}
+
+
+// Daten laden
 const response = await fetch("orte.json"); //await: warte bis die Antwort vom Server kommt
 const orte = (await response.json()).map((ort) => ({
   ...ort,
@@ -32,6 +46,7 @@ const orte = (await response.json()).map((ort) => ({
   niederschlagLProQm: Number(ort.niederschlagLProQm),
 }));
 console.log(orte);
+
 
 // Farbverlauf im OKLCH-Farbraum (L = Helligkeit, C = Sättigung/Chroma, H = Farbton)
 // trocken: hell, blass, türkis-grünlich  →  nass: dunkel, kräftig, tiefes Blau-Violett
@@ -63,15 +78,23 @@ for (const ort of orte) {
   console.log(ort.name, "→ x:", x, "y:", y);
 }
 
+
+// Zeichnen des SVGs
 function zeichnen(){
-    const breite = sliderBreite.value;
-    const hoehe = breite / 2;
+    const breite = BREITE_SVG;
+    const hoehe = HOEHE_SVG;
+
+     // Slider steuert den Zoomfaktor, nicht mehr die SVG-Größe
+    const zoom = Number(sliderBreite.value) / SLIDER_BASIS;
+    const ausschnitt = zoomAusschnitt(AUSSCHNITT, ZOOMPUNKT, zoom);
+
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${breite}" height="${hoehe}">
   <rect width="${breite}" height="${hoehe}" fill="#f4f1ea" stroke="#222"/>`;
 
 for (const ort of orte) {
-  const x = lonZuX(ort.lon, breite, AUSSCHNITT);
-  const y = latZuY(ort.lat, hoehe, AUSSCHNITT);
+  const x = lonZuX(ort.lon, breite, ausschnitt);
+  const y = latZuY(ort.lat, hoehe, ausschnitt);
+   if (x < 0 || x > breite || y < 0 || y > hoehe) continue; // außerhalb des Rahmens
   const farbe = niederschlagZuFarbe(ort.niederschlagLProQm);
   svg += `
   <circle cx="${x}" cy="${y}" r="4" fill="${farbe}" stroke="#222" stroke-width="0.5"/>
